@@ -1,7 +1,5 @@
 # Arquitetura hexagonal
 
-
-
 ---
 
 ### Como subir o projeto:
