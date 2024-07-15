@@ -20,11 +20,22 @@ o download dos pacotes que vamos trabalhar.
 
 ---
 
+### Explicando a arquitetura:
+
 Vamos utilizar a pasta `application` para definir o **coração da nossa aplicação**, que ficará isolada do mundo externo.
 
-De primeiro momento, vamos definir uma interface de **product**, siga como está em `application/product.go`.
+Utilizaremos a `product.go` para definir as interfaces, estrutura do product e validações.
+Em `product_service.go` criaremos os métodos para persistir no banco de dados.
 
-E para testar os métodos de product, utilizaremos o arquivo: `product_test.go`.
+---
 
-Para rodá-lo, utilize o comando: `go test ./...` dentro do bash do container.
+### Comandos úteis
+
+Para criar mocks facilmente em Go, podemos utilizar o **_mockgen_**, que é um auto gerador de mocks, para utilizá-lo
+digite o comando a seguir: `mockgen -destination=application/mocks/application.go -source=application/product.go application`
+dentro do bash do container.
+
+**Para rodar as classes de testes Go**, rode o comando no mesmo bash: `go test ./...`.
+> Caso queira rodar uma classe de teste em específico, utilize `go test ./application/{arquivo_teste}`.
+
 ![img.png](readme_images/img.png)
