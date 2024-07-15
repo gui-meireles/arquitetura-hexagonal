@@ -24,8 +24,10 @@ o download dos pacotes que vamos trabalhar.
 
 Vamos utilizar a pasta `application` para definir o **coração da nossa aplicação**, que ficará isolada do mundo externo.
 
-Utilizaremos a `product.go` para definir as interfaces, estrutura do product e validações.
-Em `product_service.go` criaremos os métodos para persistir no banco de dados.
+Utilizaremos a `product.go` para definir as interfaces, estrutura do produto e as regras de negócio.
+
+Em `product_service.go` criaremos os métodos para chamar a classe de persistência (que ficará fora da application) e conta
+com algumas validações caso aconteça algum erro durante a persistência dos dados.
 
 ---
 
