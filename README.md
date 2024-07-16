@@ -22,12 +22,21 @@ o download dos pacotes que vamos trabalhar.
 
 ### Explicando a arquitetura:
 
+### Pasta `application`
+
 Vamos utilizar a pasta `application` para definir o **coração da nossa aplicação**, que ficará isolada do mundo externo.
 
-Utilizaremos a `product.go` para definir as interfaces, estrutura do produto e as regras de negócio.
+Utilizaremos a `application/product.go` para definir as interfaces, estrutura do produto e as regras de negócio.
 
-Em `product_service.go` criaremos os métodos para chamar a classe de persistência (que ficará fora da application) e conta
+Em `application/product_service.go` criaremos os métodos para chamar a classe de persistência (que ficará fora da application) e conta
 com algumas validações caso aconteça algum erro durante a persistência dos dados.
+
+### Pasta `adapters`
+
+Vamos utilizar a pasta `adapters` para definir os componentes externos da nossa aplicação, como a persistência no banco
+de dados, filas, web, entre outros.
+
+Utilizaremos a `adapters/db/product.go` para criar a persistência com o banco de dados.
 
 ---
 
