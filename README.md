@@ -38,9 +38,14 @@ de dados, filas, web, entre outros.
 
 Utilizaremos a `adapters/db/product.go` para criar a persistência com o banco de dados.
 
+O arquivo `sqlite.db` na raiz do projeto, **será o nosso banco de dados**, para **criar as tabelas** abra o bash e digite:
+`sqlite3 sqlite.db` e rode os comando: `create table products(id string, name string, price float, status string);`
+
+Em `adapters/db/product_test.go`, criaremos os testes no banco.
+
 ---
 
-### Comandos úteis
+### Comandos úteis do application
 
 Para criar mocks facilmente em Go, podemos utilizar o **_mockgen_**, que é um auto gerador de mocks, para utilizá-lo
 digite o comando a seguir: `mockgen -destination=application/mocks/application.go -source=application/product.go application`
@@ -50,3 +55,9 @@ dentro do bash do container.
 > Caso queira rodar uma classe de teste em específico, utilize `go test ./application/{arquivo_teste}`.
 
 ![img.png](readme_images/img.png)
+
+### Comandos úteis do db
+
+Para abrir o terminal do db, rode o comando: `sqlite3 sqlite.db`.
+
+Para checar as tabelas: `.tables`.
