@@ -33,7 +33,9 @@ Em `adapters/cli/product_test.go`, criaremos os testes do adapter CLI.
 
 Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente pela Web.
 
-Em `adapters/web/server/server.go` criaremos o arquivo de configuração das rotas e aplicação Web.
+Em `adapters/web/server/server.go` criaremos as configurações de rotas e middlewares.
+
+Em `adapters/web/handler/product.go` teremos os handlers, que funcionam semelhantes a uma controller.
 
 #### Pasta `adapters/db`
 
