@@ -155,14 +155,20 @@ E dentro da pasta `cmd` será criado um arquivo `http.go`, onde instanciaremos n
 
 Com o arquivo `http.go` configurado, digite no bash: `go run main.go http` para iniciar o server.
 > **Obs:** O comando acima precisa estar rodando no bash para que sejam feitas as requisições http.
-
 ![img_4.png](readme_images/img_4.png)
 
-E em outro terminal, você pode chamar a requisição `GET` com o comando: `curl http://localhost:9000/product/{productId}`.
+Em outro terminal, você pode chamar a requisição `GET` com o comando: `curl http://localhost:9000/product/{productId}`.
 ![img_5.png](readme_images/img_5.png)
 
-E podemos utilizar o **Postman** para fazer requisições `POST` e criar um produto:
+Podemos utilizar o **Postman** para fazer requisições `POST` para criar um produto:
 ![img_6.png](readme_images/img_6.png)
 
 Caso seja feita uma requisição em que o **price é negativo**, ele retornará **erro**:
 ![img_7.png](readme_images/img_7.png)
+
+Para habilitar um produto existente, utilize: `http://localhost:9000/product/{productId}/enable`:
+![img_8.png](readme_images/img_8.png)
+
+E para desabilitar um produto existente, utilize: `http://localhost:9000/product/{productId}/disable`:
+> Porém devemos zerar o valor do produto para desabilitá-lo.
+![img_9.png](readme_images/img_9.png)
