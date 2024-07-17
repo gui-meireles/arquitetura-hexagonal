@@ -22,9 +22,12 @@ de dados, filas, web, entre outros.
 
 Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente.
 
-Utilizaremos a `adapters/cli/product.go` para passar uma instrução de criar/buscar/atualizar um produto por linha de comando.
+Utilizaremos a `adapters/cli/product.go` para mapear uma instrução de criar/buscar/atualizar um produto por linha de comando.
 
 Em `adapters/cli/product_test.go`, criaremos os testes do adapter CLI.
+
+> Podemos utilizar a biblioteca **Cobra** para **facilitar as chamadas CLI**, de uma olhada no módulo `Sobre o Cobra`
+> que está logo abaixo.
 
 #### Pasta `adapters/db`
 
@@ -93,9 +96,31 @@ Fornecendo uma estrutura para definir comandos, flags e argumentos.
 
 Para utilizá-lo em sua aplicação Go, você deve baixá-lo através do **Dockerfile**. (Utilize a versão v1.1.3)
 
-E iniciar o Cobra com o comando: `cobra init --pkg-name=github.com/gui-meireles/go-hexagonal/application`.
+E inicie o Cobra com o comando: `cobra init --pkg-name=github.com/gui-meireles/go-hexagonal`.
 
 Ele criará os arquivos `main.go` e `cmd/root.go`.
 
-Caso você tente rodar o go run main.go e apareça alguns erros de pacotes, rode o comando: `go mod tidy`, ele removerá
+Caso você tente rodar o `go run main.go` e apareça **erros de pacotes**, rode o comando: `go mod tidy`, ele removerá
 os pacotes que não estiverem sendo utilizados e baixará os necessários.
+
+Ao rodar o comando: `go run main.go`, deverá aparecer semelhante a imagem abaixo:
+![img_1.png](readme_images/img_1.png)
+
+Crie o arquivo cli com: `cobra add cli` e ele ficará dentro da pasta `cmd`.
+
+Faremos a injeção das dependências da service e do db no arquivo `cmd/root.go` e criaremos os comandos em
+`cmd/cli.go`.
+
+Com isso feito, podemos **ver os comandos CLI** com: `go run main.go cli --help`.
+
+E para **executar uma ação**, você pode rodar o comando: `go run main.go cli -a=create -n="Melancia" -p=25.0`.
+
+| Comandos | Função                                             |
+|----------|----------------------------------------------------|
+| **-a**   | Chama a função dentro de `adapters/cli/product.go` |
+| **-n**   | Informa o nome do produto                          |
+| **-p**   | Informa o preço do produto                         |
+| **-i**   | Informa o ID do produto                            |
+
+Fazendo o **select** na tabela, podemos ver que foi criado um novo produto:
+![img_2.png](readme_images/img_2.png)
