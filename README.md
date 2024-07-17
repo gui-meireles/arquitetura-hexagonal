@@ -39,12 +39,12 @@ Em `adapters/db/product_test.go`, criaremos os testes no banco.
 
 ### Raiz do projeto
 
-Na raiz do projeto contamos com o arquivo `main.go` que é um modo de **criarmos uma conexão** dos `adapters` na `application`
+Na raiz do projeto contamos com o arquivo `mainteste.go` que é um modo de **criarmos uma conexão** dos `adapters` na `application`
 e realizar uma inserção e atualização de um produto no banco.
 
-Temos o arquivo `sqlite.db` que é utilizado na `main.go`, utilizado para salvar os **insert/update/delete** do banco.
+Temos o arquivo `sqlite.db` que é utilizado na `mainteste.go` para salvar os **insert/update/delete** do banco.
 
-Para rodar essa classe, basta digitar o comando no bash: `go run main.go`.
+Para rodar essa classe, basta digitar o comando no bash: `go run mainteste.go`.
 
 ---
 
@@ -84,3 +84,18 @@ dentro do bash do container.
 Para abrir o terminal do db, rode o comando dentro do bash: `sqlite3 sqlite.db`.
 
 Para checar as tabelas: `.tables`.
+
+### Sobre o Cobra
+
+É uma **biblioteca popular em Go** que permite criar aplicativos de linha de comando de forma _fácil e eficiente_.
+
+Fornecendo uma estrutura para definir comandos, flags e argumentos.
+
+Para utilizá-lo em sua aplicação Go, você deve baixá-lo através do **Dockerfile**. (Utilize a versão v1.1.3)
+
+E iniciar o Cobra com o comando: `cobra init --pkg-name=github.com/gui-meireles/go-hexagonal/application`.
+
+Ele criará os arquivos `main.go` e `cmd/root.go`.
+
+Caso você tente rodar o go run main.go e apareça alguns erros de pacotes, rode o comando: `go mod tidy`, ele removerá
+os pacotes que não estiverem sendo utilizados e baixará os necessários.

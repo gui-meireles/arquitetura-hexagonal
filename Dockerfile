@@ -4,6 +4,7 @@ WORKDIR /go/src
 ENV PATH="/go/bin:${PATH}"
 
 RUN go get -u github.com/spf13/cobra@latest && \
+    go install github.com/spf13/cobra/cobra@v1.1.3 && \
     go install github.com/golang/mock/mockgen@v1.5.0 && \
     go install github.com/spf13/cobra-cli@latest
 
