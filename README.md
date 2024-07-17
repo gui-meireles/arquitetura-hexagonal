@@ -20,7 +20,7 @@ de dados, filas, web, entre outros.
 
 #### Pasta `adapters/cli`
 
-Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente.
+Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente pelo CLI.
 
 Utilizaremos a `adapters/cli/product.go` para mapear uma instrução de criar/buscar/atualizar um produto por linha de comando.
 
@@ -28,6 +28,12 @@ Em `adapters/cli/product_test.go`, criaremos os testes do adapter CLI.
 
 > Podemos utilizar a biblioteca **Cobra** para **facilitar as chamadas CLI**, de uma olhada no módulo `Sobre o Cobra`
 > que está logo abaixo.
+
+#### Pasta `adapters/web`
+
+Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente pela Web.
+
+Em `adapters/web/server/server.go` criaremos o arquivo de configuração das rotas e aplicação Web.
 
 #### Pasta `adapters/db`
 
