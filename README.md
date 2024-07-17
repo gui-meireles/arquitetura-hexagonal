@@ -26,7 +26,7 @@ Utilizaremos a `adapters/cli/product.go` para mapear uma instrução de criar/bu
 
 Em `adapters/cli/product_test.go`, criaremos os testes do adapter CLI.
 
-> Podemos utilizar a biblioteca **Cobra** para **facilitar as chamadas CLI**, de uma olhada no módulo `Sobre o Cobra`
+> Podemos utilizar a biblioteca **Cobra** para **facilitar as chamadas CLI**, siga o módulo `Sobre o Cobra`
 > que está logo abaixo.
 
 #### Pasta `adapters/web`
@@ -40,6 +40,8 @@ Em `adapters/web/handler/product.go` teremos os handlers, que funcionam semelhan
 Em `adapters/web/handler/error_json.go` converteremos a mensagem de erro para o formato json.
 
 Em `adapters/web/handler/error_json_test.go` testaremos a mensagem de erro em json.
+
+> Para rodar o serviço web, utilizaremos o **Cobra** novamente, siga o módulo `Utilizando o Cobra para serviço http` que está logo abaixo.
 
 #### Pasta `adapters/db`
 
@@ -141,3 +143,15 @@ Fazendo o **select** na tabela, podemos ver que foi criado um novo produto:
 
 Buscando pelo **ID do produto** através do **CLI**:
 ![img_3.png](readme_images/img_3.png)
+
+### Utilizando o Cobra para serviço http
+
+O Cobra pode nos auxiliar a criar um serviço http, para isso precisamos digitar no bash: `cobra add http`.
+
+E dentro da pasta `cmd` será criado um arquivo `http.go`, onde instanciaremos nossa web service.
+
+Com o arquivo `http.go` configurado, digite no bash: `go run main.go http` para iniciar o server.
+![img_4.png](readme_images/img_4.png)
+
+E em outro terminal, você pode chamar a requisição `GET` com o comando: `curl http://localhost:9000/product/{productId}`.
+![img_5.png](readme_images/img_5.png)

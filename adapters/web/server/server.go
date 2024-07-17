@@ -32,7 +32,7 @@ func (w WebServer) Serve() {
 	server := &http.Server{
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout:      10 * time.Second,
-		Addr:              ":8080",
+		Addr:              ":9000", // Aqui deve ser uma porta que esteja aberta no docker-compose.yml
 		Handler:           http.DefaultServeMux,
 		ErrorLog:          log.New(os.Stderr, "log: ", log.Lshortfile),
 	}
