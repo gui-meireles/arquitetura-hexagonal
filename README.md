@@ -24,6 +24,8 @@ Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente
 
 Utilizaremos a `adapters/cli/product.go` para passar uma instrução de criar/buscar/atualizar um produto por linha de comando.
 
+Em `adapters/cli/product_test.go`, criaremos os testes do adapter CLI.
+
 #### Pasta `adapters/db`
 
 Esse será o lado direito da arquitetura hexagonal, que fará a conexão com o db.
