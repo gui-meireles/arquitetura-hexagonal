@@ -43,6 +43,8 @@ Em `adapters/web/handler/error_json_test.go` testaremos a mensagem de erro em js
 
 > Para rodar o serviço web, utilizaremos o **Cobra** novamente, siga o módulo `Utilizando o Cobra para serviço http` que está logo abaixo.
 
+Em `adapters/dto/product.go` criaremos o DTO da requisição `POST` para fazer o **bind** do JSON com o product da application.
+
 #### Pasta `adapters/db`
 
 Esse será o lado direito da arquitetura hexagonal, que fará a conexão com o db.
