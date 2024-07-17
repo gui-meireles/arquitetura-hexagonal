@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/gui-meireles/go-hexagonal/application/cmd"
+import "github.com/gui-meireles/go-hexagonal/cmd"
 
 func main() {
 	cmd.Execute()
