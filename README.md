@@ -35,7 +35,8 @@ Esse será o lado esquerdo da arquitetura hexagonal, que representará o cliente
 
 Em `adapters/web/server/server.go` criaremos as configurações de rotas e middlewares.
 
-Em `adapters/web/handler/product.go` teremos os handlers, que funcionam semelhantes a uma controller.
+Em `adapters/web/handler/product.go` teremos os handlers, que funcionam semelhantes a uma controller, onde conseguimos
+buscar ou criar um produto por http.
 
 Em `adapters/web/handler/error_json.go` converteremos a mensagem de erro para o formato json.
 
