@@ -88,6 +88,8 @@ Para abrir o terminal do db, rode o comando dentro do bash: `sqlite3 sqlite.db`.
 
 Para checar as tabelas: `.tables`.
 
+---
+
 ### Sobre o Cobra
 
 É uma **biblioteca popular em Go** que permite criar aplicativos de linha de comando de forma _fácil e eficiente_.
@@ -113,7 +115,7 @@ Faremos a injeção das dependências da service e do db no arquivo `cmd/root.go
 
 Com isso feito, podemos **ver os comandos CLI** com: `go run main.go cli --help`.
 
-E para **executar uma ação**, você pode rodar o comando: `go run main.go cli -a=create -n="Melancia" -p=25.0`.
+E para **executar uma ação de criar produto**, você pode rodar o comando: `go run main.go cli -a=create -n="Melancia" -p=25.0`.
 
 | Comandos | Função                                             |
 |----------|----------------------------------------------------|
@@ -124,3 +126,6 @@ E para **executar uma ação**, você pode rodar o comando: `go run main.go cli 
 
 Fazendo o **select** na tabela, podemos ver que foi criado um novo produto:
 ![img_2.png](readme_images/img_2.png)
+
+Buscando pelo **ID do produto** através do **CLI**:
+![img_3.png](readme_images/img_3.png)
