@@ -154,7 +154,15 @@ O Cobra pode nos auxiliar a criar um serviço http, para isso precisamos digitar
 E dentro da pasta `cmd` será criado um arquivo `http.go`, onde instanciaremos nossa web service.
 
 Com o arquivo `http.go` configurado, digite no bash: `go run main.go http` para iniciar o server.
+> **Obs:** O comando acima precisa estar rodando no bash para que sejam feitas as requisições http.
+
 ![img_4.png](readme_images/img_4.png)
 
 E em outro terminal, você pode chamar a requisição `GET` com o comando: `curl http://localhost:9000/product/{productId}`.
 ![img_5.png](readme_images/img_5.png)
+
+E podemos utilizar o **Postman** para fazer requisições `POST` e criar um produto:
+![img_6.png](readme_images/img_6.png)
+
+Caso seja feita uma requisição em que o **price é negativo**, ele retornará **erro**:
+![img_7.png](readme_images/img_7.png)
