@@ -37,6 +37,10 @@ Em `adapters/web/server/server.go` criaremos as configurações de rotas e middl
 
 Em `adapters/web/handler/product.go` teremos os handlers, que funcionam semelhantes a uma controller.
 
+Em `adapters/web/handler/error_json.go` converteremos a mensagem de erro para o formato json.
+
+Em `adapters/web/handler/error_json_test.go` testaremos a mensagem de erro em json.
+
 #### Pasta `adapters/db`
 
 Esse será o lado direito da arquitetura hexagonal, que fará a conexão com o db.
