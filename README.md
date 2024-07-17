@@ -25,6 +25,14 @@ O arquivo `sqlite.db` na raiz do projeto, **será o nosso banco de dados**, para
 
 Em `adapters/db/product_test.go`, criaremos os testes no banco.
 
+### Raiz do projeto
+
+Na raiz do projeto contamos com o arquivo `main.go` que é um modo de **criarmos uma conexão** dos `adapters` na `application`.
+
+Temos o arquivo `sqlite.db` que é utilizado na `main.go`, utilizado para salvar os **insert/update/delete** do banco.
+
+Para rodar essa classe, basta digitar o comando no bash: `go run main.go`.
+
 ---
 
 ### Como subir o projeto:
@@ -57,6 +65,8 @@ digite o comando a seguir: `mockgen -destination=application/mocks/application.g
 dentro do bash do container.
 
 ### Comandos úteis do db
+
+**Para criar o arquivo sqlite.db**, utilize o comando dentro do bash: `touch sqlite.db`.
 
 Para abrir o terminal do db, rode o comando dentro do bash: `sqlite3 sqlite.db`.
 
